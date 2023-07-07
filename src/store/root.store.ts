@@ -1,22 +1,16 @@
 import { ColorModeStore } from '@modules/color-mode';
-import { WagmiStore } from '@modules/wagmi';
+import { Web3AuthStore } from '@modules/web-3-auth/web-3-auth.store';
 import { ConstructorOfValues } from '@types';
 import { makeAutoObservable } from 'mobx';
 
-import { UserStore, CounterStore } from './example';
 import { SnackStore } from './snack.store';
 
 export class RootStore {
   static map: Map<ConstructorOfValues<RootStore>, keyof RootStore> = new Map();
 
-  //#region examples
-  userStore = new UserStore();
-  counterStore = new CounterStore();
-  //#endregion
-
   //#region modules
   colorModeStore = new ColorModeStore();
-  wagmiStore = new WagmiStore();
+  web3AuthStore = new Web3AuthStore();
   //#endregion
 
   snackStore = new SnackStore();
