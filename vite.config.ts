@@ -4,8 +4,11 @@ import * as path from 'path'
 import { nodePolyfills } from 'vite-plugin-node-polyfills'
 import babel from 'vite-plugin-babel';
 
+import {name} from './package.json';
+
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: `/${name}/`,
   plugins: [
     react(),
     nodePolyfills({

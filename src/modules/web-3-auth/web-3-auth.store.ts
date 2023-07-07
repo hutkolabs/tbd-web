@@ -4,10 +4,10 @@ import { Web3Auth } from '@web3auth/modal';
 import { OpenloginAdapter } from '@web3auth/openlogin-adapter';
 import { makeObservable, observable, toJS } from 'mobx';
 
-const appName = 'YOUR_APP_NAME';
 const web3AuthNetwork = 'cyan';
 
 const {
+  VITE_APP_TITLE: appName,
   VITE_WEB3AUTH_CLIENT_ID: clientId,
   VITE_WEB3AUTH_CLIENT_VERIFIER_NAME: verifier,
   VITE_AUTH0_CLIENT_ID: auth0ClientId
