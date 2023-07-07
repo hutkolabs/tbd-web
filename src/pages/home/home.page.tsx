@@ -4,7 +4,6 @@ import { PolkadotRPC } from '@modules/polkadot/rpc';
 import { Web3AuthStore } from '@modules/web-3-auth/web-3-auth.store';
 import { WithStores } from '@types';
 import { withStores } from '@utils';
-import { SafeEventEmitterProvider } from '@web3auth/base';
 import { observer } from 'mobx-react-lite';
 
 const notInitializedMessage = 'Web3Auth not initialized yet';
@@ -69,7 +68,7 @@ export const HomePageView: WithStores<typeof stores> = ({ web3Auth }) => {
 
       return;
     }
-    const rpc = new PolkadotRPC(web3Auth.provider as SafeEventEmitterProvider);
+    const rpc = new PolkadotRPC(web3Auth.provider);
     const polkadotKeypair = await rpc.getPolkadotKeyPair();
     uiConsole('Keypair', polkadotKeypair);
   };
